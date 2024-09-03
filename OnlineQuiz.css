@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(15, 0, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right {
+    flex: 2;
+    padding: 20px;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 62);
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+#question {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#options {
+    margin-bottom: 20px;
+}
+
+button.option-button {
+    background-color: rgb(0, 0, 117);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+button.option-button:hover {
+    background-color: rgb(0, 0, 150);
+}
+
+button.next-button {
+    background-color: rgb(0, 117, 0);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+button.next-button:hover {
+    background-color: rgb(0, 150, 0);
+}
+
+input[type="text"] {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(0, 0, 62);
+}
+
+label + input {
+    margin-top: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
