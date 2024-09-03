@@ -1,5 +1,15 @@
 function redirectToPage2() {
-    const nameToPass = document.getElementById("name").value;
+    const nameField = document.getElementById('name');
+    const errorMessage = document.getElementById('error-message');
+
+    if (nameField.value.trim() === '') {
+        errorMessage.textContent = 'Please enter your name.'; 
+        return; 
+    }
+
+    errorMessage.textContent = '';
+
+    const nameToPass = encodeURIComponent(nameField.value.trim());
     const url = `OnlineQuiz.html?variable=${encodeURIComponent(nameToPass)}`;
     window.location.href = url;
 }

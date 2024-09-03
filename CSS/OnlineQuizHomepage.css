@@ -11,11 +11,15 @@
     border-radius: 8px;
    }
 body {
-    background-color: rgb(15, 0, 62);
+    background-image: url('../IMAGES/OnlineQuizBG.gif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    margin: 70px;
+    height: 90vh;
+    font-family: 'Poppins', sans-serif;
    }
 h1 {
     font-family: 'Poppins', sans-serif;
@@ -54,6 +58,13 @@ button {
     height: 40px;
     width: 200px;
     margin-left: 70px;
-    margin-top: 5px;
     align-items: center;
+}
+
+button:hover {
+    background-color: rgb(43, 35, 255);
+    color: rgb(255, 255, 255);
+}
+span {
+    font-size: 14px;
 }

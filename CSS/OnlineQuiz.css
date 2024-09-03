@@ -3,7 +3,10 @@
 }
 
 body {
-    background-color: rgb(15, 0, 62);
+    background-image: url('/IMAGES/OnlineQuizBG.gif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     display: flex;
     justify-content: center;
     align-items: center;
