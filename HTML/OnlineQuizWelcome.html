@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/OnlineQuizWelcome.css">
+    <link rel="icon" href="../IMAGES/OnlineQuizLogo.png" type="image/png">
+    <script src="../JS/WelcomePage.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="right" id="welcome-section">
+            <h1>Welcome to DevQuiz!</h1>
+            <button type="button" onclick="showDescription()">Continue</button>
+        </div>
+        <div class="left">
+            <img src="/IMAGES/OnlineQuiz.gif" alt="Animated GIF" style="width: 300px; height: auto;">
+        </div>
+
+        <div id="description-section" style="display: none;">
+            <p>Test your JavaScript skills with a mix of multiple choice, fill-in-the-blank, and checkbox questions. Dive in and see how well you know JavaScript!</p>
+            <button type="button" onclick="redirectToPage2()">Get Started</button>
+        </div>
+    </div>
+</body>
+</html>
