@@ -30,13 +30,6 @@ body {
     padding: 20px;
 }
 
-.left {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -52,24 +45,34 @@ h1 {
 
 #options {
     margin-bottom: 20px;
+    border: 1px solid #ccc; /* Added border to options section */
+    width: 100%;
+    padding: 5px; /* Added padding for better spacing */
+    border-radius: 4px; /* Rounded corners for consistency */
 }
 
 button.option-button {
-    background-color: rgb(0, 0, 117);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 117); /* Text color for better contrast */
     font-family: 'Poppins', sans-serif;
     height: 40px;
-    width: 100%;
-    border: none;
+    width: 100%; /* Adjusted to fill the container width */
+    border: 1px solid rgb(0, 0, 117); /* Border color matches text color */
     border-radius: 4px;
     cursor: pointer;
     display: block;
     margin: 5px 0;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button.option-button:hover {
     background-color: rgb(0, 0, 150);
+    color: white;
+}
+
+button.option-button.selected {
+    background-color: rgb(0, 150, 0);
+    color: white; /* Text color when selected */
 }
 
 button.next-button {
@@ -78,12 +81,12 @@ button.next-button {
     font-family: 'Poppins', sans-serif;
     height: 40px;
     width: 100px;
-    border: none;
+    border: none; /* Remove border for a cleaner look */
     border-radius: 4px;
     cursor: pointer;
-    display: block;
-    margin: 0 auto;
     transition: background-color 0.3s;
+    display: block;
+    margin-left: 530px;
 }
 
 button.next-button:hover {
@@ -113,3 +116,4 @@ label + input {
 input[type="checkbox"] {
     margin-right: 5px;
 }
+
