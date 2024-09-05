@@ -92,3 +92,49 @@ const questions = [
         "points": 1
     }
 ];
+
+let currentQuestionIndex = 0;
+const totalQuestions = questions.length;
+let currentQuestion = null;
+
+function loadQuestion() {
+    if (currentQuestionIndex >= totalQuestions) {
+        displayScore();
+        return;
+    }
+
+    currentQuestion = questions[currentQuestionIndex];
+    document.getElementById('question').innerHTML = currentQuestion.question;
+    const optionsContainer = document.getElementById('options');
+    optionsContainer.innerHTML = '';
+
+    const nextButton = document.getElementById('next-button');
+    nextButton.style.display = 'block';
+
+    switch (currentQuestion.questionType) {
+        case 'MULTIPLE_CHOICE':
+            loadMultipleChoiceOptions();
+            break;
+        case 'CHECKBOXES':
+            loadCheckboxOptions();
+            break;
+        case 'TEXT':
+            loadTextInput();
+            break;
+    }
+}
+
+function loadMultipleChoiceOptions() {
+    const optionsContainer = document.getElementById('options');
+    currentQuestion.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.className = 'option-button';
+        button.onclick = () => handleOptionSelect(option, button);
+        optionsContainer.appendChild(button);
+    });
+}
+
+
+loadQuestion();
+

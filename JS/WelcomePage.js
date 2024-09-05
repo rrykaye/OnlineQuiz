@@ -4,5 +4,5 @@ function showDescription() {
 }
 
 function redirectToPage2() {
-    window.location.href = "OnlineQuizHomepage.html"; // Redirect to the quiz page or any other page.
+    window.location.href = "OnlineQuizHomepage.html"; 
 }
