@@ -10,7 +10,7 @@ function redirectToAnotherPage() {
     errorMessage.textContent = '';
 
     const nameToPass = encodeURIComponent(nameField.value.trim());
-    const url = `OnlineQuiz.html?variable=${encodeURIComponent(nameToPass)}`;
+    const url = `OnlineQuiz.html?name=${encodeURIComponent(nameToPass)}`;
     window.location.href = url;
 }
 
@@ -122,6 +122,7 @@ function loadQuestion() {
             loadTextInput();
             break;
     }
+    fadeInOptions();
 }
 
 function loadMultipleChoiceOptions() {
@@ -135,6 +136,53 @@ function loadMultipleChoiceOptions() {
     });
 }
 
+function loadCheckboxOptions() {
+    const optionsContainer = document.getElementById('options');
+    const maxSelection = 2;
 
+    currentQuestion.options.forEach(option => {
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = option;
+        checkbox.className = 'option-checkbox';
+
+    checkbox.onclick = () => handleCheckboxLimit(maxSelection);
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(option));
+        optionsContainer.appendChild(label);
+        label.appendChild(document.createElement('br'));
+    });
+}
+
+function handleOptionSelect (selectedOption, button) {
+    const isCorrect = currentQuestion.correctAnswer.includes(selectedOption);
+    button.style.backgroundColor = isCorrect ? 'green' : 'red';
+    button.style.color = 'white';
+
+    disableOptions('.option-button');
+
+    showCorrectAnswer();
+
+    document.getElementById('next-button').style.display = 'block';
+}
+
+function disableOptions(selector) {
+    document.querySelectorAll(selector).forEach(elem => elem.disabled = true);
+}
+
+function showCorrectAnswer() {
+    document.querySelectorAll('.option-button').forEach(button => {
+        const optionText = button.textContent;
+        if (currentQuestion.correctAnswer.includes(optionText)) {
+            button.style.backgroundColor = 'green'; 
+            button.style.color = 'white'; 
+        }
+    });
+}
+
+function fadeInOptions() {
+    const optionsContainer = document.getElementById('options');
+}
 loadQuestion();
 
